@@ -1,0 +1,73 @@
+﻿@model PROJECT_MVC.Models.InsertDB 
+@{
+    ViewBag.Title = "Register_Load";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<center>
+    <h1>User Registration</h1>
+    <div>
+        @using (Html.BeginForm("Register_Click", "Insert", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div>
+                <label>Name:</label>
+            </div>
+            <div>
+                @Html.TextBoxFor(m => m.Name)
+                @Html.ValidationMessageFor(m => m.Name)
+            </div>
+            <div>
+                <label>Age:</label>
+            </div>
+            <div>
+                @Html.TextBoxFor(m => m.Age)
+                @Html.ValidationMessageFor(m => m.Age)
+            </div>
+            <div>
+                <label>Address:</label>
+            </div>
+            <div>
+                @Html.TextAreaFor(m => m.Address)
+                @Html.ValidationMessageFor(m => m.Address)
+            </div>
+            <div>
+                <label>Email:</label>
+            </div>
+            <div>
+                @Html.TextBoxFor(m => m.Email)
+                @Html.ValidationMessageFor(m => m.Email)
+            </div>
+            <div>
+                <label>Photo:</label>
+            </div>
+            <div>
+                @Html.TextBox("file", "", new { Type = "file" })
+            </div>
+            <div>
+                <label>Username:</label>
+            </div>
+            <div>
+                @Html.TextBoxFor(m => m.Username)
+                @Html.ValidationMessageFor(m => m.Username)
+            </div>
+            <div>
+                <label>Password:</label>
+            </div>
+            <div>
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+            <div>
+                <label>Confirm Password:</label>
+            </div>
+            <div>
+                @Html.PasswordFor(m => m.CPassword)
+                @Html.ValidationMessageFor(m => m.CPassword)
+            </div>
+            <div>
+                <input id="Button1" type="submit" value="Insert" />
+                @Html.DisplayFor(m => m.msg)
+            </div>
+        }
+    </div>
+</center>
+

@@ -1,0 +1,31 @@
+﻿@model PROJECT_MVC.Models.BookDB
+@{
+    ViewBag.Title = "Book_Load";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<center>
+    <h1>Book Insertion</h1>
+    <div>
+        @using (Html.BeginForm("Book_Click", "BookInsert", FormMethod.Post))
+        {
+            <div>
+                <label>Book Name:</label>
+            </div>
+            <div>
+                @Html.TextBoxFor(m => m.BookName)
+            </div>
+            <div>
+                <label>Book Summary:</label>
+            </div>
+            <div>
+                @Html.TextAreaFor(m => m.BookSummary)
+            </div>
+            <div>
+                <input id="Button1" type="submit" value="Insert" />
+                @Html.DisplayFor(m => m.msg)
+            </div>
+        }
+    </div>
+</center>
+
+

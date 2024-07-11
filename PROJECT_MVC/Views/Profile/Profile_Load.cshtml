@@ -1,0 +1,55 @@
+﻿@model PROJECT_MVC.Models.ProfileViewAndEdit
+@{
+    ViewBag.Title = "Profile_Load";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<center>
+    <div>
+        @using (Html.BeginForm("Profile_Update", "Profile", FormMethod.Get))
+        {
+            <div><img src="~/PHS/bannermvc.jpg" width="1100px" /></div>
+            <br />
+            <br />
+            <h2>Profile View</h2>
+            <br />
+            <div>
+                <label>Name:</label>
+            </div>
+            <div>
+                @Html.TextBoxFor(m => m.Name)
+            </div>
+            <div>
+                <label>Age:</label>
+            </div>
+            <div>
+                @Html.TextBoxFor(m => m.Age)
+            </div>
+            <div>
+                <label>Address:</label>
+            </div>
+            <div>
+                @Html.TextAreaFor(m => m.Address)
+            </div>
+            <div>
+                <label>Email:</label>
+            </div>
+            <div>
+                @Html.TextBoxFor(m => m.Email)
+            </div>
+            <div>
+                <label>Photo:</label>
+            </div>
+            <div>
+                <img src="@Url.Content(@Model.Photo)" alt="Champion" height="500px" width="=350px" />
+            </div>
+            <div>
+                <input id="Submit1" type="submit" value="Update" />
+                @Html.DisplayFor(m => m.msg)
+            </div>
+            <div>
+                @Html.ActionLink("Back Home", "Home", "Login")
+            </div>
+        }
+    </div>
+</center>
+

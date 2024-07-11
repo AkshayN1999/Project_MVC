@@ -1,0 +1,37 @@
+﻿@model IEnumerable<PROJECT_MVC.BookTab>
+@{
+    ViewBag.Title = "BookView_Load";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<center>
+    <h2>Display All Details</h2>
+    <div>
+        @using (Html.BeginForm("BookView_Load", "BookView", FormMethod.Get))
+        {
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(m => m.BookName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.BookSummary)
+                    </th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(mitem => item.BookName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(mitem => item.BookSummary)
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+    </div>
+</center>
+
+
+

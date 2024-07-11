@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<center>
+    <div><img src="~/PHS/bannermvc.jpg" width="1100px" /></div>
+    <h2>Home Page</h2>
+    <div>
+        @Html.ActionLink("Summary of Books", "BookView_Load", "BookView")
+    </div>
+    <div>
+        @Html.ActionLink("View User Profile", "Profile_Load", "Profile")
+    </div>
+    <div>
+        @Html.ActionLink("Change Password", "Password_Load", "ChangePassword")
+    </div>
+    <div>
+        @Html.ActionLink("All the details of clients", "Display_Load", "DisplayAll")
+    </div>
+</center>
+
